@@ -1,0 +1,1161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Проверка справки на подлинность</title>
+    <link rel="shortcut icon" type="image/x-icon" href="image/favicon.ico">
+    <link href="css/style-up.css" type="text/css" rel="stylesheet">
+    <link href="css/kernel_main.css" type="text/css" rel="stylesheet">
+    <link href="css/template_6edefdaca9bbf115d218c6baf089c770.css" type="text/css" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800&amp;subset=cyrillic" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900&amp;subset=cyrillic" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/3.1.0/css/font-awesome.min.css" rel="stylesheet" />
+
+    <script async="" src="https://mc.yandex.ru/metrika/tag.js"></script>
+    <script type="text/javascript" async="" src="https://bitrix.info/ba.js"></script>
+    <script async="" src="https://connect.facebook.net/en_US/fbevents.js"></script>
+    <script data-skip-moving="true">
+        !function(f,b,e,v,n,t,s)
+        {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+        n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+        if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+        n.queue=[];t=b.createElement(e);t.async=!0;
+        t.src=v;s=b.getElementsByTagName(e)[0];
+        s.parentNode.insertBefore(t,s)}(window, document,'script',
+        'https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', '286081656383815');
+        fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+        src="https://www.facebook.com/tr?id=286081656383815&ev=PageView&noscript=1"
+    /></noscript>
+
+    <script type="text/javascript">if(!window.BX)window.BX={};if(!window.BX.message)window.BX.message=function(mess){if(typeof mess=='object') for(var i in mess) BX.message[i]=mess[i]; return true;};</script>
+    <script type="text/javascript">(window.BX||top.BX).message({'JS_CORE_LOADING':'Загрузка...','JS_CORE_NO_DATA':'- Нет данных -','JS_CORE_WINDOW_CLOSE':'Закрыть','JS_CORE_WINDOW_EXPAND':'Развернуть','JS_CORE_WINDOW_NARROW':'Свернуть в окно','JS_CORE_WINDOW_SAVE':'Сохранить','JS_CORE_WINDOW_CANCEL':'Отменить','JS_CORE_WINDOW_CONTINUE':'Продолжить','JS_CORE_H':'ч','JS_CORE_M':'м','JS_CORE_S':'с','JSADM_AI_HIDE_EXTRA':'Скрыть лишние','JSADM_AI_ALL_NOTIF':'Показать все','JSADM_AUTH_REQ':'Требуется авторизация!','JS_CORE_WINDOW_AUTH':'Войти','JS_CORE_IMAGE_FULL':'Полный размер'});</script>
+    <script type="text/javascript">(window.BX||top.BX).message({'LANGUAGE_ID':'ru','FORMAT_DATE':'DD.MM.YYYY','FORMAT_DATETIME':'DD.MM.YYYY HH:MI:SS','COOKIE_PREFIX':'BITRIX_SM','SERVER_TZ_OFFSET':'10800','SITE_ID':'s1','SITE_DIR':'/','USER_ID':'','SERVER_TIME':'1635855331','USER_TZ_OFFSET':'0','USER_TZ_AUTO':'Y','bitrix_sessid':'81c70f5bc0482072d273da17ad2ae1ed'});</script>
+    <script type="text/javascript" src="js/kernel_main.js"></script>
+    <script type="text/javascript" src="js/core_db.min.js"></script>
+    <script type="text/javascript" src="js/core_frame_cache.min.js"></script>
+    <script type="text/javascript" src="js/kernel_sng.up.js"></script>
+    <script type="text/javascript">BX.setJSList(['/bitrix/js/main/core/core.js','/bitrix/js/main/core/core_ajax.js','/bitrix/js/main/json/json2.min.js','/bitrix/js/main/core/core_ls.js','/bitrix/js/main/core/core_fx.js','/bitrix/js/main/session.js','/bitrix/js/main/core/core_popup.js','/bitrix/js/main/core/core_date.js','/bitrix/js/main/core/core_window.js','/bitrix/js/main/core/core_tooltip.js','/bitrix/js/main/utils.js','/bitrix/js/sng.up/script-up.js','/bitrix/templates/template_2018/js/jquery-3.2.1.min.js','/bitrix/templates/template_2018/js/jquery.maskedinput.js','/bitrix/templates/template_2018/js/popper.min.js','/bitrix/templates/template_2018/js/bootstrap.min.js','/bitrix/templates/template_2018/js/jquery.fancybox.min.js','/bitrix/templates/template_2018/js/jquery.formstyler.min.js','/bitrix/templates/template_2018/js/main.js','/servmz/callme/callme.js','/bitrix/templates/template_2018/js/jquery-ui.min.js']); </script>
+    <script type="text/javascript">BX.setCSSList(['/bitrix/js/main/core/css/core.css','/bitrix/js/main/core/css/core_popup.css','/bitrix/js/main/core/css/core_date.css','/bitrix/js/main/core/css/core_tooltip.css','/bitrix/templates/template_2018/components/pixelplus/user.list/index_search_panel/style.css','/bitrix/templates/template_2018/components/bitrix/menu/footer/style.css','/bitrix/templates/template_2018/css/bootstrap.css','/bitrix/templates/template_2018/css/font-awesome.min.css','/bitrix/templates/template_2018/css/jquery.fancybox.min.css','/bitrix/templates/template_2018/css/jquery.formstyler.css','/bitrix/templates/template_2018/css/jquery.formstyler.theme.css','/bitrix/templates/template_2018/css/owl.theme.default.min.css','/bitrix/templates/template_2018/css/owl.carousel.min.css','/bitrix/templates/template_2018/css/template.css','/bitrix/templates/template_2018/css/aa-spec.css','/bitrix/templates/template_2018/css/responsive.css']); </script>
+    <script type="text/javascript">
+        (function () {
+            "use strict";
+
+            var counter = function ()
+            {
+                var cookie = (function (name) {
+                    var parts = ("; " + document.cookie).split("; " + name + "=");
+                    if (parts.length == 2) {
+                        try {return JSON.parse(decodeURIComponent(parts.pop().split(";").shift()));}
+                        catch (e) {}
+                    }
+                })("BITRIX_CONVERSION_CONTEXT_s1");
+
+                if (cookie && cookie.EXPIRE >= BX.message("SERVER_TIME"))
+                    return;
+
+                var request = new XMLHttpRequest();
+                request.open("POST", "/bitrix/tools/conversion/ajax_counter.php", true);
+                request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+                request.send(
+                    "SITE_ID="+encodeURIComponent("s1")+
+                    "&sessid="+encodeURIComponent(BX.bitrix_sessid())+
+                    "&HTTP_REFERER="+encodeURIComponent(document.referrer)
+                );
+            };
+
+            if (window.frameRequestStart === true)
+                BX.addCustomEvent("onFrameDataReceived", counter);
+            else
+                BX.ready(counter);
+        })();
+    </script>
+
+<script>sng_up_button_opacity='100';sng_up_button_width='';sng_up_button='/bitrix/images/sng.up/to-up1.png'; sng_up_position ='right';sng_up_position_indent_x = '20';sng_up_position_indent_y = '55'</script>
+</head>
+<body>
+
+    <div class="wrapper">
+        <div class="block-aa collapse" id="panel_cpl" aria-expanded="true">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-3">
+                        <div class="aa-item-block">
+                            <span class="title">Размер</span>
+                            <span class="aa" id="sss1"><span class="aaFontsize-small">A</span></span>
+                            <span class="aa" id="sss2"><span class="aaFontsize-normal">A</span></span>
+                            <span class="aa" id="sss3"><span class="aaFontsize-big">A</span></span>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="aa-item-block">
+                            <span class="title">Цвет</span>
+                            <span class="color" id="color1"><span class="black">C</span></span>
+                            <span class="color" id="color2"><span class="yellow">C</span></span>
+                            <span class="color" id="color3"><span class="blue">C</span></span>
+                        </div>
+                    </div>
+    
+                    <div class=" col-md-3">
+                        <div class="aa-item-block">
+                            <span class="title">Изображения</span>
+                            <span class="pic" id="pic_on"><span id="on">Вкл.</span></span>
+                            <span class="pic" id="pic_off"><span id="of">Выкл.</span></span>
+                        </div>
+    
+                    </div>
+                    <div class="col-md-3">
+                        <div class="aa-item-block">
+                            <span class="simple" id="body_norm">Обычная версия сайта</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+             <div class="block-aa collapse" id="panel_search" aria-expanded="true">
+            
+            <div class="container">
+    
+                <div class="row h-100 justify-content-start">
+                    <div class="col-lg-4 col-md-6 align-self-center">
+                        <div class="label-h">
+                            <div class="form-check form-check-inline">
+                                 <div class="jq-radio form-check-input sear_11" id="inlineRadio11-styler"><input class="form-check-input sear_11" type="radio" name="inlineRadioOptions2" id="inlineRadio11" value="11"><div class="jq-radio__div"></div></div>
+                                <label class="form-check-label" for="inlineRadio11">Услуги</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <div class="jq-radio form-check-input checked sear_11" id="inlineRadio22-styler"><input class="form-check-input checked sear_11" type="radio" name="inlineRadioOptions2" id="inlineRadio22" value="22"><div class="jq-radio__div"></div></div>
+                                <label class="form-check-label checked" for="inlineRadio22">Специалисты</label>
+                            </div>
+                            <div class="form-check form-check-inline" style="display:none">
+                                <div class="jq-radio form-check-input" id="inlineRadio3-styler"><input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3"><div class="jq-radio__div"></div></div>
+                                <label class="form-check-label" for="inlineRadio3">Анализы</label>
+                            </div>
+                        </div>
+                    </div>
+                      <div class="col-lg-8 col-md-6 align-self-center">
+                        <form class="form-inline my-2 my-md-0" id="inlineRadio11_1" style="display:none">
+                            <input type="hidden" class="rrreee">
+                            <div class="has-error input-item  has-feedback">
+                                <input name="name" type="text" id="inlineRadio11_1_input" class="input-style" placeholder="Введите название услуги" autocomplete="off">
+                                <span class="fa fa-times " aria-hidden="true"></span>
+                            </div>
+                            <button type="button" class="btn f-16 btn-success search_tab_11" id="ok_b_11">Поиск</button>
+                        </form>         
+                          <form class="form-inline my-2 my-md-0" id="inlineRadio22_2">
+                           <input type="hidden" class="rrreee">
+                            <div class="has-error input-item  has-feedback">
+                                <input name="name" type="text" id="inlineRadio22_2_input" class="input-style ui-autocomplete-input" placeholder="Введите фамилию специалиста" autocomplete="off">
+                                <span class="fa fa-times " aria-hidden="true"></span>
+                            </div>
+                            <button type="button" class="btn f-16 btn-success search_tab_22" id="ok_b_22">Поиск</button>
+                        </form>
+                    </div>
+                
+            </div>
+        </div>
+    </div>
+            <script>
+    $(document).ready(function(){
+        var availableTags3 = [
+                {label:'Абрамкина Наталия Викторовна',
+        value:'4674'},
+                {label:'Антипова Лидия Александровна',
+        value:'138'},
+                {label:'Бажанов Николай Олегович',
+        value:'272'},
+                {label:'Балдина Ольга Павловна',
+        value:'247'},
+                {label:'Балканова Дарья Михайловна',
+        value:'141'},
+                {label:'Барч Наталья Вячеславовна',
+        value:'235'},
+                {label:'Баскакова Анна Сергеевна',
+        value:'142'},
+                {label:'Белевская Надежда Юрьевна',
+        value:'143'},
+                {label:'Белехова Татьяна Николаевна',
+        value:'2310'},
+                {label:'Бондарева Анна Павловна',
+        value:'4675'},
+                {label:'Буланкова Ольга Алексеевна',
+        value:'7188'},
+                {label:'Бурахина Марина Анатольевна',
+        value:'4676'},
+                {label:'Буркова Наталья Михайловна',
+        value:'146'},
+                {label:'Вахрушева Анастасия Валерьевна',
+        value:'4677'},
+                {label:'Виноградов Максим Николаевич',
+        value:'221'},
+                {label:'Виноградов Константин Валерьевич',
+        value:'147'},
+                {label:'Виноградова Елена Ивановна',
+        value:'252'},
+                {label:'Виноградова Светлана Александровна',
+        value:'222'},
+                {label:'Волкова Алевтина Вячеславовна',
+        value:'8537'},
+                {label:'Волкова Татьяна Леонидовна',
+        value:'4678'},
+                {label:'Воробьева Юлия Александровна',
+        value:'4679'},
+                {label:'Всемирнов Кирилл Олегович',
+        value:'148'},
+                {label:'Вялков Владимир Викторович',
+        value:'4626'},
+                {label:'Гаврютина Людмила Александровна',
+        value:'5136'},
+                {label:'Гайдукова Анна Николаевна',
+        value:'4680'},
+                {label:'Галкина Ольга Николаевна',
+        value:'327'},
+                {label:'Герасимова Анна Вячеславовна',
+        value:'149'},
+                {label:'Голланд Алексей Владленович',
+        value:'151'},
+                {label:'Голланд Елена Петровна',
+        value:'150'},
+                {label:'Головина Татьяна Витальевна',
+        value:'328'},
+                {label:'Голубева Ольга Эдуардовна',
+        value:'4681'},
+                {label:'Гончарова Яна Валерьевна',
+        value:'2627'},
+                {label:'Горбачев Владимир Михайлович',
+        value:'4050'},
+                {label:'Горева Юлия Геннадьевна',
+        value:'4682'},
+                {label:'Городинская Наталия Петровна',
+        value:'4751'},
+                {label:'Гречухина Светлана Викторовна',
+        value:'4683'},
+                {label:'Григорьев Сергей Михайлович',
+        value:'329'},
+                {label:'Григорьева Ольга Ивановна',
+        value:'153'},
+                {label:'Григорьева Наталия Николаевна',
+        value:'2287'},
+                {label:'Гробищева Татьяна Ивановна',
+        value:'154'},
+                {label:'Громова Светлана Павловна',
+        value:'8223'},
+                {label:'Грошко Евгения Юрьевна',
+        value:'246'},
+                {label:'Гурьев Вадим Борисович',
+        value:'156'},
+                {label:'Гусева Анна Сергеевна',
+        value:'7189'},
+                {label:'Гущин Александр Сергеевич',
+        value:'5871'},
+                {label:'Даниелян Давид Арамович',
+        value:'6817'},
+                {label:'Даниелян Александра Дмитриевна',
+        value:'6816'},
+                {label:'Дёмина Софья Игоревна',
+        value:'6233'},
+                {label:'Долгов Сергей Юрьевич',
+        value:'1349'},
+                {label:'Долгова Ольга Михайловна',
+        value:'157'},
+                {label:'Егорова Дарья Евгеньевна',
+        value:'4685'},
+                {label:'Железова Полина Викторовна',
+        value:'158'},
+                {label:'Журавлев Валерий Николаевич',
+        value:'160'},
+                {label:'Зайцева Татьяна Павловна',
+        value:'161'},
+                {label:'Зайцева Ирина Владимировна',
+        value:'8322'},
+                {label:'Зеленова Анна Владимировна',
+        value:'7488'},
+                {label:'Зиновьева Екатерина Васильевна',
+        value:'8333'},
+                {label:'Зуева Ольга Владимировна',
+        value:'4686'},
+                {label:'Иваник Елена Сергеевна',
+        value:'4687'},
+                {label:'Иванников Михаил Николаевич',
+        value:'229'},
+                {label:'Ивлева Анастасия Витальевна',
+        value:'163'},
+                {label:'Ивойлова Наталья Владимировна',
+        value:'8198'},
+                {label:'Исаев Игорь Евгеньевич',
+        value:'164'},
+                {label:'Исаев Родион Юрьевич',
+        value:'7258'},
+                {label:'Кабешов Александр Михайлович',
+        value:'7528'},
+                {label:'Караванова Наталья Николаевна',
+        value:'4752'},
+                {label:'Карпов Александр Андреевич',
+        value:'1886'},
+                {label:'Кириллов Михаил Борисович',
+        value:'239'},
+                {label:'Киселева Юлия Валерьевна',
+        value:'4688'},
+                {label:'Киселева Виктория Валерьевна',
+        value:'8394'},
+                {label:'Князев Александр Викторович',
+        value:'280'},
+                {label:'Кожухова Оксана Валерьевна',
+        value:'4689'},
+                {label:'Козлов Александр Геннадьевич',
+        value:'231'},
+                {label:'Козлова Татьяна Сагидулловна',
+        value:'223'},
+                {label:'Колпакова Ольга Николаевна',
+        value:'4690'},
+                {label:'Королева Инга Юрьевна',
+        value:'4691'},
+                {label:'Коротаева Елена Борисовна',
+        value:'8289'},
+                {label:'Косолапов Владимир Николаевич',
+        value:'167'},
+                {label:'Костычев Сергей Николаевич',
+        value:'168'},
+                {label:'Крайнова Светлана Валентиновна',
+        value:'5652'},
+                {label:'Красникова Наталья Михайловна',
+        value:'257'},
+                {label:'Краснова Анастасия Геннадьевна',
+        value:'3296'},
+                {label:'Крылова Людмила Олеговна',
+        value:'225'},
+                {label:'Крякина Надежда Николаевна',
+        value:'4972'},
+                {label:'Кузнецов Григорий Федорович',
+        value:'171'},
+                {label:'Кузнецов Александр Евгеньевич',
+        value:'170'},
+                {label:'Кузнецова Анжелика Юрьевна',
+        value:'4692'},
+                {label:'Кузьминова Оксана Владимировна',
+        value:'4693'},
+                {label:'Кулакова Александра Игоревна',
+        value:'4694'},
+                {label:'Курапин Евгений Викторович',
+        value:'172'},
+                {label:'Лазарева Светлана Николаевна',
+        value:'4695'},
+                {label:'Лапин Александр Игоревич',
+        value:'266'},
+                {label:'Лебедева Анна Владимировна',
+        value:'236'},
+                {label:'Леонова Ирина Валентиновна',
+        value:'173'},
+                {label:'Лозовская Нина Александровна',
+        value:'433'},
+                {label:'Лошакова Ирина Николаевна',
+        value:'4696'},
+                {label:'Любимова Лариса Николаевна',
+        value:'4697'},
+                {label:'Малинов Илья Николаевич',
+        value:'258'},
+                {label:'Малышева Татьяна Германовна',
+        value:'175'},
+                {label:'Марьинская Татьяна Владимировна',
+        value:'4698'},
+                {label:'Мельникова Татьяна Донатовна',
+        value:'177'},
+                {label:'Молодова Людмила Александровна',
+        value:'178'},
+                {label:'Морозов Игорь Германович',
+        value:'232'},
+                {label:'Морозова Елена Николаевна',
+        value:'179'},
+                {label:'Мошкова Мария Александровна',
+        value:'8193'},
+                {label:'Мурзина Ольга Александровна',
+        value:'8194'},
+                {label:'Мышко Светлана Леонидовна',
+        value:'233'},
+                {label:'Назарова Наталия Васильевна',
+        value:'181'},
+                {label:'Насырова Нажия Алимовна',
+        value:'332'},
+                {label:'Некрасов Артем Андреевич',
+        value:'183'},
+                {label:'Низов Артём Владимирович',
+        value:'279'},
+                {label:'Низова Алла Александровна',
+        value:'3664'},
+                {label:'Низова Надежда Васильевна',
+        value:'287'},
+                {label:'Новоселова Наталья Евгеньевна',
+        value:'333'},
+                {label:'Новосельцева Полина Александровна',
+        value:'4700'},
+                {label:'Носкова Анна Васильевна',
+        value:'4701'},
+                {label:'Огонькова Любовь Вячеславовна',
+        value:'226'},
+                {label:'Огородникова Анна Александровна',
+        value:'259'},
+                {label:'Осипов Александр Юрьевич',
+        value:'187'},
+                {label:'Панкратова Елена Витальевна',
+        value:'4702'},
+                {label:'Панова Светлана Леонидовна',
+        value:'234'},
+                {label:'Пахтушкина Елена Вячеславовна',
+        value:'4703'},
+                {label:'Петрова Юлия Николаевна',
+        value:'1240'},
+                {label:'Писарева Валентина Олеговна',
+        value:'7664'},
+                {label:'Подобина Татьяна Александровна',
+        value:'4704'},
+                {label:'Полетаев Борис Александрович',
+        value:'245'},
+                {label:'Половинкина Татьяна Олеговна',
+        value:'5933'},
+                {label:'Полякова Галина Романовна',
+        value:'261'},
+                {label:'Попов Виктор Яковлевич',
+        value:'268'},
+                {label:'Потапов Игорь Александрович',
+        value:'189'},
+                {label:'Проценко Владимир Александрович',
+        value:'190'},
+                {label:'Репина Галина Васильевна',
+        value:'335'},
+                {label:'Рогова Светлана Леонидовна',
+        value:'271'},
+                {label:'Розова Людмила Владиславовна',
+        value:'191'},
+                {label:'Романова Галина Леонидовна',
+        value:'192'},
+                {label:'Рубцова Вера Борисовна',
+        value:'4705'},
+                {label:'Румянцева Анна Алексеевна',
+        value:'4706'},
+                {label:'Русская Татьяна Петровна',
+        value:'193'},
+                {label:'Севергина Елена Николаевна',
+        value:'281'},
+                {label:'Селезнева Татьяна Андреевна',
+        value:'263'},
+                {label:'Сергин Сергей Александрович',
+        value:'194'},
+                {label:'Сергина Ирина Васильевна',
+        value:'195'},
+                {label:'Скородумова Александра Павловна',
+        value:'7142'},
+                {label:'Смирнова Ирина Николаевна',
+        value:'8224'},
+                {label:'Смирнова Любовь Николаевна',
+        value:'5535'},
+                {label:'Смирнова Наталья Вениаминовна',
+        value:'201'},
+                {label:'Смирнова Анжела Александровна',
+        value:'5534'},
+                {label:'Смирнова Марина Александровна',
+        value:'197'},
+                {label:'Смирнова Алла Владимировна',
+        value:'4709'},
+                {label:'Смирнова Ольга Юрьевна',
+        value:'200'},
+                {label:'Смирнова Галина Валерьевна',
+        value:'198'},
+                {label:'Снопова Елена Валентиновна',
+        value:'241'},
+                {label:'Соболева Надежда Григорьевна',
+        value:'203'},
+                {label:'Соколова Татьяна Владимировна',
+        value:'204'},
+                {label:'Соколова Татьяна Юрьевна',
+        value:'228'},
+                {label:'Соловьев Владимир Вячеславович',
+        value:'205'},
+                {label:'Соловьева Валентина Авенировна',
+        value:'267'},
+                {label:'Сосненкова Елена Вениаминовна',
+        value:'206'},
+                {label:'Стогова Александра Владимировна',
+        value:'6274'},
+                {label:'Строкин Александр Арнольдович',
+        value:'207'},
+                {label:'Строкина Татьяна Константиновна',
+        value:'208'},
+                {label:'Суркова Елена Александровна',
+        value:'4710'},
+                {label:'Суровцев Алексей Юрьевич',
+        value:'4148'},
+                {label:'Терентьев Дмитрий Владимирович',
+        value:'210'},
+                {label:'Титов Сергей Павлович',
+        value:'211'},
+                {label:'Тихомирова Ирина Николаевна',
+        value:'4711'},
+                {label:'Тихонов Константин Сергеевич',
+        value:'244'},
+                {label:'Трибушная Елена Валерьевна',
+        value:'4712'},
+                {label:'Тумакова Елена Сергеевна',
+        value:'4713'},
+                {label:'Туразашвили Марина Валериевна',
+        value:'277'},
+                {label:'Уманская Анна Александровна',
+        value:'2449'},
+                {label:'Ухарцев Константин Юрьевич',
+        value:'212'},
+                {label:'Ухличев Андрей Андреевич',
+        value:'264'},
+                {label:'Федотова Екатерина Алексеевна',
+        value:'6003'},
+                {label:'Холодов Александр Валерьевич',
+        value:'214'},
+                {label:'Хохлова Светлана Владимировна',
+        value:'1733'},
+                {label:'Худякова Оксана Алексеевна',
+        value:'7415'},
+                {label:'Хутраева Мариям Расимовна',
+        value:'8352'},
+                {label:'Цветкова Наталья Владимировна',
+        value:'4714'},
+                {label:'Цыро Инна Вячеславовна',
+        value:'275'},
+                {label:'Чувиляева Татьяна Анатольевна',
+        value:'159'},
+                {label:'Чураков Александр Юрьевич',
+        value:'242'},
+                {label:'Шандырова Елена Александровна',
+        value:'337'},
+                {label:'Шанова Ольга Алексеевна',
+        value:'215'},
+                {label:'Шаргородская Ольга Владимировна',
+        value:'265'},
+                {label:'Шашина Татьяна Владимировна',
+        value:'216'},
+                {label:'Шевчук Василий Викторович',
+        value:'339'},
+                {label:'Щавелев Андрей Александрович',
+        value:'217'},
+                {label:'Щелкунова Ольга Васильевна',
+        value:'237'},
+                {label:'Яблоков Игорь Николаевич',
+        value:'219'},
+                {label:'Яковлева Ольга Владимировна',
+        value:'4715'},
+                {label:'Яровая Галина Александровна',
+        value:'4716'},
+                {label:'Ярушкин Роман Михайлович',
+        value:'341'},
+                ];
+    $( "#inlineRadio22_2_input" ).autocomplete({
+        source: availableTags3,
+        classes: {
+            "ui-autocomplete": "main-class"
+        },
+        delay: 100,
+        focus: function (event, ui) {
+            $("#inlineRadio22_2_input").val(ui.item.label);
+            return false;
+        },
+        select: function (event, ui) {
+           $(".rrreee").val(ui.item.value);
+            return false;
+        }
+    });
+    $('#ok_b_22').click(function(){
+        var rt=$('.rrreee').val();
+        if(rt.length===0)
+            {
+                //$('.sear_11').addClass('error_input');
+            }
+        else
+            {
+                location.replace('/employees/'+rt+'/');
+            }
+    
+    });
+        //     var availableTags2 = [
+    //         //   	];
+    //    $( "#inlineRadio11_1_input" ).autocomplete({
+    //        source: availableTags2,
+    //        classes: {
+    //            "ui-autocomplete": "main-class"
+    //        },
+    //        delay: 100,
+    //		focus: function (event, ui) {
+    //            $("#inlineRadio11_1_input").val(ui.item.label);
+    //            return false;
+    //        },
+    //		select: function (event, ui) {
+    //           $(".rrreee").val(ui.item.value);
+    //            return false;
+    //        }
+    //    });
+    $('#ok_b_11').click(function(){
+        //var rt2=$('.rrreee').val();
+        var rt2=$('#inlineRadio11_1_input').val();
+        if(rt2.length===0)
+            {
+                //$('#inlineRadio11_1_input').addClass('error_input');
+            }
+        else
+            {
+                location.replace('/prays-list/?SEARCH='+rt2);
+            }
+    
+    });
+    });
+    </script>        <header class="header">
+            <div class="header-top">
+                <div class="container">
+                    <div class="row justify-content-start">
+                        <div class="col-lg-3 col-md-6 align-self-center">
+                            <a href="/">
+                                <img src="image/ce22f9b9c2b3edd7feb0c5046346ca16.svg" class="img-fluid logo" alt="Логотип Мир здоровья">
+                            </a>
+                        </div>
+                        <div class="col-lg-3 col-md-6 align-self-center">
+    
+                            <span class="contact-top adress-header">
+    
+    
+                                                                   <a href="/contacts/#my_map"><span class="ad-ad  "><i class="fa fa-map-marker" aria-hidden="true"></i>г. Кострома, ул. Титова, 15</span></a>
+                                                       <a href="/contacts/#my_map"><span class="ad-ad  "><i class="fa fa-map-marker" aria-hidden="true"></i>г. Кострома, ул. Свердлова, 83б</span></a>
+                                                       <a href="/contacts/#my_map"><span class="ad-ad  "><i class="fa fa-map-marker" aria-hidden="true"></i>г. Кострома, ул. Ленина, д. 153</span></a>
+                            
+                            </span>
+                        </div>
+                        <div class="col-lg-6 tools-head align-self-center">
+                              <div class="row justify-content-start">
+                        <div class="col-md-5 order-xs-2 align-self-center">
+                             <a href="tel:+7(4942)42-15-15" class="contact-top phone-header">
+                                <i class="fa fa-phone" aria-hidden="true"></i>+7 (4942) 42-15-15                            </a>
+                                 <a href="/covid19/" class="f-16 covids">COVID-19</a>
+                                 <a href="/vaccination/" class="f-16 covids">Вакцинация от COVID-19</a>
+                                <div class=" btn-fghf  ">
+                                <button type="button" class="btn f-16 btn-success" data-toggle="modal" data-target="#order_service111" style="display:none">Записаться</button>
+                                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Меню</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+                            </div>
+                            </div>
+                             <div class="col-md-7 order-xs-1 align-self-center">
+                            <div class="btn-tools text-right ">
+    
+                                <span class="btn-tools-item"><span class="ico-tools special-version" id="collaps_btn">Аа</span></span>
+                                <span class="btn-tools-item"><span class=" ico-tools search-btn" id="search_btn"><i class="fa fa-search" aria-hidden="true"></i></span></span>
+    
+                                <span class="btn-tools-item">
+                                                                <a href="/lk/">
+                                <span class=" ico-tools user-btn"><i class="fa fa-user" aria-hidden="true"></i></span>
+                                <span class="user-title">Вход</span>
+                                <span class="user-subtitle">Личный кабинет</span>
+                                    </a>
+                                                                </span>
+    
+                            </div>
+                            </div>
+                            </div>
+    
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <div class="container">
+    
+    
+                    <div class="collapse navbar-collapse" id="navbarsExample07">
+    
+    <ul class="navbar-nav mr-auto">                  
+                    <li class="nav-item aktsii-i  "><a href="/aktsii/" class="nav-link"><i class="svg inline  svg-inline-icon_discount" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="9" height="12" viewBox="0 0 9 12"><path data-name="Shape 943 copy 12" class="cls-1" d="M710,75l-7,7h3l-1,5,7-7h-3Z" transform="translate(-703 -75)"></path></svg></i>Акции</a></li>
+                           
+        
+           <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="/about/" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">О нас<i class="fa fa-angle-down" aria-hidden="true"></i>
+        </a>
+    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  
+           
+        
+                       <a class="dropdown-item" href="/about/o-klinike/">О клинике</a>
+          
+        
+                       <a class="dropdown-item" href="/about/news/">Новости</a>
+          
+        
+                       <a class="dropdown-item" href="/about/regulations/">Нормативные документы</a>
+          
+        
+                       <a class="dropdown-item" href="/about/supervisory-authorities/">Контролирующие организации</a>
+          
+        
+                       <a class="dropdown-item" href="/about/license/">Лицензии</a>
+          
+        
+                       <a class="dropdown-item" href="/about/jobs/">Вакансии</a>
+          
+        
+        </div></li>			    		<li class="nav-item   "><a href="/employees/" class="nav-link">Специалисты</a></li>
+                           
+        
+                    <li class="nav-item   "><a href="/prays-list/" class="nav-link">Прейскурант</a></li>
+                           
+        
+                    <li class="nav-item  aktsii-i "><a href="/personal/payment/" class="nav-link">Оплата услуг</a></li>
+                           
+        
+           <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="/personal/" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Пациенту<i class="fa fa-angle-down" aria-hidden="true"></i>
+        </a>
+    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  
+           
+        
+                       <a class="dropdown-item" href="/services/">Услуги клиники</a>
+          
+        
+                       <a class="dropdown-item" href="/personal/nalog_vichet">Оформление справки на налоговый вычет</a>
+          
+        
+                       <a class="dropdown-item" href="/grafik-raboty-vrachey/">График работы врачей</a>
+          
+        
+                       <a class="dropdown-item" href="/personal/oms/">Услуги по ОМС</a>
+          
+        
+                       <a class="dropdown-item" href="/personal/dms/">Услуги по ДМС</a>
+          
+        
+                       <a class="dropdown-item" href="/personal/law/">Права и обязанности граждан в сфере охраны здоровья</a>
+          
+        
+                       <a class="dropdown-item" href="/articles/">Медицинские статьи</a>
+          
+        
+                       <a class="dropdown-item" href="/personal/faq/">Вопрос - Ответ</a>
+          
+        
+                       <a class="dropdown-item" href="/personal/apteka/">Аптека</a>
+          
+        
+        </div></li>			    		<li class="nav-item   "><a href="/result/" class="nav-link">Результаты анализов</a></li>
+                           
+        
+                    <li class="nav-item   "><a href="/guestbook/" class="nav-link">Отзывы</a></li>
+                           
+        
+                    <li class="nav-item   "><a href="/contacts/" class="nav-link">Контакты</a></li>
+                           
+        
+                            </ul>
+    <script>
+    $(document).ready(function(){
+        $('.dropdown-toggle').click(function(e){
+            e.preventDefault();
+            if($(this).hasClass('activ')==false)
+                {
+                    $(this).next().show();
+                    $(this).addClass('activ');
+                }
+            else
+                {
+                    $(this).next().hide();
+                    $(this).removeClass('activ');
+                }
+        });
+    });
+    //$('.nav-item-search').click(function(){
+    //    location.replace('/search/');
+    //});
+    //$('.dropdown-toggle').click(function(){
+    //   var lin=$(this).attr('href');
+    //    location.replace(lin);
+    //});
+    </script>                                 </div>
+                </div>
+            </nav>
+    
+        </header>
+        
+                    <div class="page-box">
+            <div class="head-page">
+                <div class="container">
+                                     <ul class="breadcrumbs f-15">
+            <li class="bx-breadcrumb-item" id="bx_breadcrumb_0" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+                <a href="/" title="Главная страница" itemprop="url"><span itemprop="title">Главная страница</span></a>
+                
+            </li>
+            <li class="bx-breadcrumb-item"><span>Проверка справки на подлинность</span>
+            </li></ul>                    <h1 class="f-24">Проверка справки на подлинность</h1>
+                                    </div>
+            </div>
+             
+            <div class="container">
+    <div class="head-result">
+    <div class="head-result-ico result-check"><span class="fa fa-check"></span></div>
+    <div class="head-result-text">Справка действительна</div>
+    </div>
+    
+    <div class="data-pacient">
+    <div class="data-pacient-i">
+        <div class="data-label">Пациент </div>
+        <div class="data-value">Сосин Илья Александрович</div>
+        </div>
+                    <div class="data-pacient-i">
+        <div class="data-label">Дата рождения </div>
+        <div class="data-value">14.11.1989</div>
+        </div>
+                                    </div>
+    <div class="analys-pacient">
+    <div class="head-analys-pacient">
+        <div class="analys-pacient-tt">ВЫЯВЛЕНИЕ РНК КОРОНАВИРУСОВ SARS-CoV-2 И ПОДОБНЫХ SARS-CoV МЕТОДОМ ПЦР</div>
+        <div class="analys-pacient-date">
+            <span class="fa fa-calendar"></span>
+            <div class="analys-tt">
+            Дата / Время взятия биоматериала
+            </div>
+    
+                  <div class="time-analys">02.11.2021<br>09:33 UTC+03:00</div>
+                </div>
+    </div>
+    <div class="analys-pacient-list">
+        <div class="analys-pacient-i">
+            <div class="analys-pacient-t">Коронавирус SARS-CoV-2, ген E</div>
+            <div class="data-value">не выявлены (-)</div>
+        </div>
+            <div class="analys-pacient-i">
+            <div class="analys-pacient-t"> Коронавирус SARS-CoV-2, ген N</div>
+            <div class="data-value">не выявлены (-)</div>
+        </div>
+            <div class="analys-pacient-i">
+            <div class="analys-pacient-t"> Коронавирусы, подобные SARS-CoV</div>
+            <div class="data-value">не выявлены (-)</div>
+        </div>
+        </div>
+    </div>
+    </div>
+         <footer class="footer">
+            <div class="container">
+    
+                <div class="footer-top">
+                    <div class="row justify-content-start">
+                        <div class="col-lg-3 col-md-5 align-self-center">
+                            <a href="/">
+                                <img src="image/logo-down.svg" class="float-left img-fluid logo" alt="Логотип Мир здоровья">
+                            </a>
+                        </div>
+                        <div class="col-lg-4  col-md-7  align-self-center">
+    
+                            <div class="row justify-content-start">
+                                <div class="col-md-6 align-self-start">
+    
+    <nav class="nav nav-footer flex-column">                             
+    <a class="nav-link" href="/prays-list/">Прейскурант</a>
+    <a class="nav-link" href="/contacts/">Контакты</a>
+    <a class="nav-link" href="/personal/">Пациенту</a>
+    <a class="nav-link" href="/result/">Результаты анализов</a>
+    </nav>
+                                </div>
+                                <div class="col-md-6 align-self-start">
+                             
+    <nav class="nav nav-footer flex-column">                             
+    <a class="nav-link" href="/employees/">Специалисты</a>
+    <a class="nav-link" href="/services/">Услуги</a>
+    <a class="nav-link" href="/guestbook/">Отзывы</a>
+    </nav>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-5  col-md-12  align-self-center">
+                            <div class="row justify-content-start">
+                                <div class="col-md-6 align-self-start">
+                                    <div class="title-footer">Контакты</div>
+                                    <a href="tel:+7(4942)42-15-15" class="contact-top phone-header">
+                                        <i class="fa fa-phone" aria-hidden="true"></i>+7 (4942) 42-15-15                                    </a>
+                                    <span class="contact-top adress-header"><a href="/contacts/#my_map">
+                                                                    <span class="ad-ad ad-0"><i class="fa fa-map-marker" aria-hidden="true"></i>г. Кострома, ул. Титова, 15</span>
+                                                        <span class="ad-ad ad-1"><i class="fa fa-map-marker" aria-hidden="true"></i>г. Кострома, ул. Свердлова, 83б</span>
+                                                        <span class="ad-ad ad-2"><i class="fa fa-map-marker" aria-hidden="true"></i>г. Кострома, ул. Ленина, д. 153</span>
+                                                        </a></span>
+                                </div>
+                                <div class="col-md-6 align-self-start">
+                                    <div class="title-footer text-right">Мы в соцсетях</div>
+                                    <ul class="soc-list soc-inline text-right">
+                                                                    <li><a href="https://vk.com/clinicamz_ru" class="vk-link" target="_blank"><i class="fa fa-vk" aria-hidden="true"></i></a></li>
+                                                                                     
+                                                        <li><a href="https://www.instagram.com/mir_zdorovjya" class="insta-link" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                                                                </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer-bottom">
+                    <div class="row justify-content-start">
+                        <div class="col-lg-4 align-self-center">
+                            <div class="copy f-12">
+                                2021. ООО «Мир здоровья». Все права защищены.<br>Копирование материалов сайта только с разрешения автора.<a href="/personal/oms/download/politics-of-personal-data-processing-in-2016.pdf" target="_blank">Политика конфиденциальности</a>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-md-9 align-self-center">
+                            <div class="title-footer">Подписаться на новости</div>
+                            <form class="form-inline my-2 my-md-0" id="form_subscribe">
+                               
+                                     <div class="row w-100 justify-content-start">
+                                <div class="col-md-6 align-self-start">
+                                <div class="has-error input-item  has-feedback">
+                                    <input name="EMAIL" type="email" class="input-style rt" placeholder="Введите  email">
+                                    <span class="fa fa-times sys_but" aria-hidden="true"></span>
+                                </div> 
+                                </div> 
+                                <div class="col-md-6 align-self-start">
+                                <button type="submit" class="btn f-16 btn-success">Подписаться</button>
+                                         </div>
+                                         </div>
+                            </form>
+                        </div>
+                        <div class="col-lg-2 col-md-3 dev align-self-center">
+                            <div class="sp float-right">
+                                <a class="s-dev" href="https://splash.su" target="_blank">
+                                    <span class="splash-pic"></span>
+                                    <span class="splash-text"></span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    
+        </footer>
+    
+    
+    <div class="banner_warning">
+                <div class="container">
+                    <span>
+                        Имеются противопоказания. Необходима консультация специалиста					</span>
+                </div>
+            </div>
+    
+    
+    
+    </div>
+    
+    
+    
+    <a id="uptocall-mini" href="#" onclick="showCallMe('#callmediv'); return false;" title="Позвоните мне" style="display: block;">
+    <div class="uptocall-mini-phone"></div>
+    </a>
+    
+    
+    <!-- MODAL -->
+    
+    
+    <!-- MODAL CLOSE -->
+    
+    <div class="block_header_activity result_form_modal" style="opacity:0; display:none"></div>
+    <div class="preloader" style="display:none"><div class="spinner-grow text-success" role="status">
+    <span class="sr-only">Загрузка...</span>
+    </div></div>
+    
+    <script>
+        $(document).ready(function() {
+               var app2 = {
+            initialize: function() {
+                this.setUpListeners();
+            },
+    
+            setUpListeners: function() {
+                $('form#form-login2').on('submit', app2.submitForm);
+            },
+    
+            submitForm: function(e) {
+                e.preventDefault();
+    
+                var form = $(this),
+                    submitBtn = form.find('input[type="submit"]');
+    
+                // если валидация не проходит - то дальше не идём
+                if (app2.validateForm(form) === false) return false;
+    
+                var str = form.serialize();
+    
+                // против повторного нажатия
+                submitBtn.attr({
+                    disabled: 'disabled'
+                });
+                $.ajax({
+                    type: "POST",
+                    url: "/handlers/form_registr.php",
+                    data: str,
+                    success: function(data) {
+                        if (data != "error") {
+                    $('#form-login2').trigger('reset');
+                    $("#reg-modal").modal('hide');
+                    $('.result_form_modal').css('display','block');
+                    $('.result_form_modal').css('opacity','1');
+                    $('.result_form_modal').text('Ваше сообщение успешно отправлено!');
+                    setTimeout(function(){ 
+                    $('.result_form_modal').css('display','none');
+                    $('.result_form_modal').css('opacity','0');
+                        },3000);
+                        }
+                    }
+                }).always(function() {
+                    submitBtn.removeAttr("disabled");
+                })
+            },
+            validateForm: function(form) {
+                var inputs = form.find('.rt'),
+                    valid = true;
+                $.each(inputs, function(index, val) {
+                    var input = $(val),
+                        val = input.val(),
+                        tr = input.next('span.sys_but');
+    
+                    if (val.length === 0) {
+                        valid = false;
+                        input.addClass("error_input");
+                        tr.removeClass('fa-check');
+                        tr.addClass('fa-times active');
+                    } else {
+                        input.removeClass("error_input");
+                        tr.removeClass('fa-times');
+                        tr.addClass('fa-check active');
+    
+                    }
+                   
+                    
+              
+                });
+                return valid;
+    
+            },
+    
+            removeError: function() {
+                $(this).removeClass('error_input');
+            }
+    
+        }
+    
+        app2.initialize();               
+           
+            
+            $("body").on("click", "span.aaFontsize-small", function() {
+                $('body').removeClass('fontsize2');
+                $('body').removeClass('fontsize3');
+                $('body').addClass('fontsize1');
+                localStorage.setItem("size", "fontsize1");
+                localStorage.setItem("body_style", "");
+            });
+            $("body").on("click", "span.aaFontsize-normal", function() {
+                $('body').removeClass('fontsize3');
+                $('body').removeClass('fontsize1');
+                $('body').addClass('fontsize2');
+                localStorage.setItem("size", "fontsize2");
+                localStorage.setItem("body_style", "");
+            });
+            $("body").on("click", "span.aaFontsize-big", function() {
+                $('body').removeClass('fontsize2');
+                $('body').removeClass('fontsize1');
+                $('body').addClass('fontsize3');
+                localStorage.setItem("size", "fontsize3");
+                localStorage.setItem("body_style", "");
+            });
+            $("body").on("click", "#color1", function() {
+                $('body').removeClass('color_body2');
+                $('body').removeClass('color_body3');
+                $('body').addClass('color_body1');
+                localStorage.setItem("color", "color_body1");
+                localStorage.setItem("body_style", "");
+            });
+            $("body").on("click", "#color2", function() {
+                $('body').removeClass('color_body1');
+                $('body').removeClass('color_body3');
+                $('body').addClass('color_body2');
+                localStorage.setItem("color", "color_body2");
+                localStorage.setItem("body_style", "");
+            });
+            $("body").on("click", "#color3", function() {
+                $('body').removeClass('color_body2');
+                $('body').removeClass('color_body1');
+                $('body').addClass('color_body3');
+                localStorage.setItem("color", "color_body3");
+                localStorage.setItem("body_style", "");
+            });
+            $("body").on("click", "#on", function() {
+                $('body').removeClass('image_of');
+                $('body').addClass('image_on');
+                localStorage.setItem("image", "image_on");
+                localStorage.setItem("body_style", "");
+            });
+            $("body").on("click", "#of", function() {
+                $('body').removeClass('image_on');
+                $('body').addClass('image_of');
+                localStorage.setItem("image", "image_of");
+                localStorage.setItem("body_style", "");
+            });
+            $("body").on("click", "#body_norm", function() {
+                $('body').removeClass();
+                $('#panel_cpl').hide();
+                $('.block-aa .color').removeClass('active');
+                $('.block-aa .pic').removeClass('active');
+                $('.block-aa .aa').removeClass('active');
+                localStorage.setItem("body_style", "v");
+            });
+    
+            $('#sss1').click(function() {
+                $('#sss2').removeClass('active');
+                $('#sss3').removeClass('active');
+                $(this).addClass('active');
+            });
+            $('#sss2').click(function() {
+                $('#sss1').removeClass('active');
+                $('#sss3').removeClass('active');
+                $(this).addClass('active');
+            });
+            $('#sss3').click(function() {
+                $('#sss1').removeClass('active');
+                $('#sss2').removeClass('active');
+                $(this).addClass('active');
+            });
+            $('#color1').click(function() {
+                $('#color2').removeClass('active');
+                $('#color3').removeClass('active');
+                $(this).addClass('active');
+            });
+            $('#color2').click(function() {
+                $('#color1').removeClass('active');
+                $('#color3').removeClass('active');
+                $(this).addClass('active');
+            });
+            $('#color3').click(function() {
+                $('#color1').removeClass('active');
+                $('#color2').removeClass('active');
+                $(this).addClass('active');
+            });
+            $('#pic_on').click(function() {
+                $('#pic_off').removeClass('active');
+                $(this).addClass('active');
+            });
+            $('#pic_off').click(function() {
+                $('#pic_on').removeClass('active');
+                $(this).addClass('active');
+            });
+        })
+        </script>
+    </div>
+    
+    
+</body>
+
+
+</html>
