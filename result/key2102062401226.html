@@ -77,7 +77,8 @@
             else
                 BX.ready(counter);
         })();
-    </script>_
+    </script>
+
 
 <script>sng_up_button_opacity='100';sng_up_button_width='';sng_up_button='image/to-up1.png'; sng_up_position ='right';sng_up_position_indent_x = '20';sng_up_position_indent_y = '55'</script>
 </head>
@@ -377,7 +378,7 @@
             Дата / Время взятия биоматериала
             </div>
     
-                  <div class="time-analys">02.11.2021<br>09:33 UTC+03:00</div>
+                  <div id = 'dateTime' class="time-analys">02.11.2021<br>09:33 UTC+03:00</div>
                 </div>
     </div>
     <div class="analys-pacient-list">
@@ -709,6 +710,32 @@
     
     
 </body>
+
+
+
+<script type="text/javascript">
+
+function zero_first_format(value)
+    {
+        if (value < 10)
+        {
+            value='0'+value;
+        }
+        return value;
+    }
+
+function date_time()
+    {
+        var current_datetime = new Date();
+        var day = zero_first_format(current_datetime.getDate() - 1);
+        var month = zero_first_format(current_datetime.getMonth()+1);
+        var year = current_datetime.getFullYear();
+        
+        return day+"."+month+"."+year+"<br>"+"11"+":"+"27"+" "+"UTC+03:00";
+    }
+
+    document.getElementById('dateTime').innerHTML = date_time()
+</script>
 
 
 </html>
